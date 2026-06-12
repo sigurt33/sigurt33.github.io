@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Дубинец Николай — резюме</title>
+<style>
+  :root{ --ink:#111110; --soft:#5d5a54; --accent:#ff4d12; --line:#e3e0d9; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  @page{ size:A4; margin:0 }
+  body{
+    font-family:'Segoe UI', Arial, sans-serif; color:var(--ink);
+    font-size:10.2pt; line-height:1.5; background:#fff;
+  }
+  .page{ padding:13mm 15mm; }
+  /* header */
+  .head{ display:flex; justify-content:space-between; gap:8mm; align-items:flex-start;
+    border-bottom:2.5pt solid var(--ink); padding-bottom:5mm; margin-bottom:5mm; }
+  .head__name{ font-size:23pt; font-weight:800; letter-spacing:.01em; line-height:1.1; text-transform:uppercase; }
+  .head__role{ margin-top:2mm; font-size:11.5pt; font-weight:700; color:var(--accent); }
+  .head__meta{ margin-top:1.5mm; font-size:9.5pt; color:var(--soft); font-weight:600; }
+  .head__contacts{ text-align:right; font-size:9.5pt; font-weight:600; line-height:1.7; white-space:nowrap; }
+  .head__contacts a{ color:var(--ink); text-decoration:none }
+  .head__contacts b{ color:var(--accent) }
+  /* sections */
+  h2{ font-size:11pt; font-weight:800; text-transform:uppercase; letter-spacing:.08em;
+    margin:5mm 0 2.5mm; display:flex; align-items:center; gap:3mm; }
+  h2::after{ content:''; flex:1; height:1pt; background:var(--line); }
+  .lead{ color:var(--soft); }
+  .lead b{ color:var(--ink) }
+  /* two-col skills */
+  .skills{ display:grid; grid-template-columns:1fr 1fr; gap:1.6mm 6mm; }
+  .skill{ font-size:9.6pt; }
+  .skill b{ display:block; }
+  .skill span{ color:var(--soft); }
+  /* experience */
+  .job{ display:grid; grid-template-columns:30mm 1fr; gap:4mm; margin-bottom:3mm; }
+  .job__period{ font-weight:700; font-size:9.3pt; color:var(--accent); padding-top:.4mm; }
+  .job__role{ font-weight:800; font-size:10.4pt; }
+  .job__org{ font-weight:600; color:var(--soft); font-size:9.4pt; }
+  .job ul{ margin:1mm 0 0 4mm; color:var(--soft); font-size:9.4pt; }
+  .job li b{ color:var(--ink) }
+  /* projects */
+  .projects{ display:grid; grid-template-columns:1fr 1fr; gap:2mm 6mm; }
+  .proj{ font-size:9.4pt; }
+  .proj b{ }
+  .proj span{ color:var(--soft) }
+  .proj a{ color:var(--accent); text-decoration:none; font-weight:700; font-size:8.8pt }
+  /* edu + qualities row */
+  .cols{ display:grid; grid-template-columns:1.25fr 1fr; gap:8mm; }
+  .edu li, .qual li{ list-style:none; font-size:9.3pt; margin-bottom:1.2mm; color:var(--soft); }
+  .edu li b{ color:var(--accent); font-weight:800; margin-right:2mm; }
+  .qual li::before{ content:'— '; color:var(--accent); font-weight:800; }
+  .footer-note{ margin-top:5mm; padding:3.5mm 5mm; background:#faf6f2; border-left:3pt solid var(--accent);
+    font-size:9.6pt; font-weight:600; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="head">
+    <div>
+      <div class="head__name">Дубинец Николай</div>
+      <div class="head__role">Технический специалист онлайн-школ · Вайбкодер (Claude Code)</div>
+      <div class="head__meta">График: фриланс / полная занятость</div>
+    </div>
+    <div class="head__contacts">
+      <b>TG</b> <a href="https://t.me/Hotkot19">@Hotkot19</a><br>
+      <b>Тел / WhatsApp</b> +375 29 823-78-75<br>
+      <b>Email</b> <a href="mailto:dibunik@gmail.com">dibunik@gmail.com</a><br>
+      <b>GitHub</b> <a href="https://github.com/sigurt33">github.com/sigurt33</a>
+    </div>
+  </div>
+
+  <p class="lead">Технарь, который чётко знает, как работают онлайн-школы изнутри: <b>GetCourse, CRM, партнёрки, реклама, логистика и Claude Code</b> — всё в одном флаконе. Довожу новичков до результата, системно веду базу, не боюсь возражений. Работаю без внешнего контроля — сам веду проекты от идеи до результата.</p>
+
+  <h2>Ключевые навыки</h2>
+  <div class="skills">
+    <div class="skill"><b>Техподдержка онлайн-школ</b><span>GetCourse, CRM, доступы, рассылки, процессы обучения</span></div>
+    <div class="skill"><b>Claude Code / Вайбкодинг</b><span>боты, дашборды, планеры, автоматизация с ИИ</span></div>
+    <div class="skill"><b>Разработка чат-ботов</b><span>Telegram-боты, сценарии, связки «бот + дашборд»</span></div>
+    <div class="skill"><b>Веб-дизайн и графика</b><span>сайты от структуры до визуала, Canva</span></div>
+    <div class="skill"><b>Google Workspace</b><span>Документы, Таблицы, Презентации; слепая печать</span></div>
+    <div class="skill"><b>Онлайн-встречи и платформы</b><span>Zoom, Google Meet, быстрая адаптация к сервисам</span></div>
+    <div class="skill"><b>Управление и наставничество</b><span>обучение с нуля, техника «12 возражений», скрипты</span></div>
+    <div class="skill"><b>Каталоги и продуктовые матрицы</b><span>системное ведение базы клиентов и сделок</span></div>
+  </div>
+
+  <h2>Проекты (GitHub)</h2>
+  <div class="projects">
+    <div class="proj"><b>AI Weekly Planner</b> — <span>мульти-агентный планировщик недели: приоритеты, биоритмы, Google Calendar, MCP-сервер для Claude Code, Telegram-мост.</span> <a href="https://github.com/sigurt33/ai-Google-Planners">github.com/sigurt33/ai-Google-Planners</a></div>
+    <div class="proj"><b>NexusTG</b> — <span>локальный агрегатор Telegram-сообщений с LLM-классификацией и веб-интерфейсом.</span> <a href="https://github.com/sigurt33/NexusTG">github.com/sigurt33/NexusTG</a></div>
+    <div class="proj"><b>ContentZavod</b> — <span>конвейер контента для Telegram и VK: AI-обложки (FLUX), автопостинг через Postiz.</span> <a href="https://github.com/sigurt33/ContentZavod">github.com/sigurt33/ContentZavod</a></div>
+    <div class="proj"><b>Nikolas Studio</b> — <span>премиальный лендинг на Next.js + TypeScript: scroll-анимации, формы с валидацией.</span> <a href="https://github.com/sigurt33/domland">github.com/sigurt33/domland</a></div>
+    <div class="proj"><b>Кошка-Погодушка</b> — <span>погодное приложение с анимированной SVG-кошкой: веб + Android.</span> <a href="https://github.com/sigurt33/mypogodnik">github.com/sigurt33/mypogodnik</a></div>
+    <div class="proj"><b>PDF-Чекмейкер</b> — <span>автогенерация PDF-счетов из CSV/JSON по HTML-шаблонам (Python).</span> <a href="https://github.com/sigurt33/pdf-chekmaker">github.com/sigurt33/pdf-chekmaker</a></div>
+  </div>
+
+  <h2>Опыт работы</h2>
+  <div class="job">
+    <div class="job__period">2025 — сейчас</div>
+    <div>
+      <span class="job__role">Технический специалист</span> · <span class="job__org">школа Матриус; университет Зерокодер</span>
+      <ul><li>Поддержка пользователей: GetCourse, доступы, рассылки; автоматизация с Claude Code</li></ul>
+    </div>
+  </div>
+  <div class="job">
+    <div class="job__period">2024 — 2025</div>
+    <div>
+      <span class="job__role">Менеджер по работе с партнёрами · Специалист по рекламе</span>
+      <ul><li>Партнёрская программа школы; реклама и маркетинговые стратегии в Яндексе</li></ul>
+    </div>
+  </div>
+  <div class="job">
+    <div class="job__period">2018 — 2020</div>
+    <div>
+      <span class="job__role">Менеджер по продажам и наставничеству</span> · <span class="job__org">прямые продажи</span>
+      <ul>
+        <li>Провёл <b>40 сделок</b>, повторные продажи — <b>25% от базы</b>; внедрил учёт сделок в Google Таблицах (аналог CRM)</li>
+        <li>Привлёк и обучил <b>9 сотрудников</b> (12 возражений, каталоги); <b>3 человека</b> вышли на оборот от 30 000 ₽/мес</li>
+        <li>Совокупный оборот команды за год — <b>1 000 000 ₽</b></li>
+      </ul>
+    </div>
+  </div>
+  <div class="job">
+    <div class="job__period">2015 — 2026</div>
+    <div><span class="job__role">Логист</span> · <span class="job__org">«Савушкин продукт»</span></div>
+  </div>
+  <div class="job">
+    <div class="job__period">2009 — 2010</div>
+    <div><span class="job__role">Менеджер по работе с клиентами</span></div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h2>Обучение</h2>
+      <ul class="edu">
+        <li><b>2026</b>Вайбкодер · Claude Code — университет Зерокодер</li>
+        <li><b>2025</b>Партнёрская программа и развитие школы с помощью партнёров</li>
+        <li><b>2024</b>Технический специалист онлайн-школ</li>
+        <li><b>2024</b>Реклама и маркетинговые стратегии в Яндекс</li>
+        <li><b>2018</b>Привлечение клиентов и партнёрские программы в прямых продажах</li>
+        <li><b>2018</b>Работа с возражениями и наставничество</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Личные качества</h2>
+      <ul class="qual">
+        <li>Критика — точка роста</li>
+        <li>Работаю на качество, а не «отстреляться»</li>
+        <li>Быстро учусь, легко адаптируюсь</li>
+        <li>Отвечаю за сроки и детали</li>
+        <li>Работаю без внешнего контроля</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-note">Дайте тестовое задание — и вы получите человека, который одновременно разбирается в технике, рекламе, партнёрках, логистике, продажах и клиентах. Сайт-резюме: https://sigurt33.github.io</div>
+
+</div>
+</body>
+</html>
