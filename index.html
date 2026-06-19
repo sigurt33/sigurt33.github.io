@@ -461,6 +461,73 @@ img{max-width:100%}
 .edu-card__org{margin-top:4px;font-size:14px;font-weight:600;color:var(--ink-soft)}
 @media (max-width:760px){.edu__grid{grid-template-columns:1fr}}
 
+/* ---------- certificates ---------- */
+.certs{margin-top:64px}
+.certs__title{
+  font-family:var(--font-display);font-weight:700;font-size:14px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);
+  display:flex;align-items:center;gap:14px;margin-bottom:26px;
+}
+.certs__title::before{content:'';width:46px;height:2px;background:var(--accent)}
+.certs__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.cert{
+  display:block;width:100%;text-align:left;cursor:pointer;font:inherit;color:inherit;
+  background:#fff;border:1.5px solid rgba(17,17,16,.08);border-radius:var(--radius);
+  padding:14px;overflow:hidden;
+  transition:transform .35s,border-color .35s,box-shadow .35s;
+}
+.cert:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 22px 44px -18px rgba(17,17,16,.18)}
+.cert:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.cert__thumb{
+  position:relative;border-radius:12px;overflow:hidden;background:var(--bg-soft);
+  aspect-ratio:16/11;display:flex;align-items:center;justify-content:center;
+}
+.cert__thumb img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.cert__thumb::after{
+  content:'⤢ Увеличить';position:absolute;right:10px;bottom:10px;
+  background:rgba(17,17,16,.82);color:#fff;font-size:11px;font-weight:700;
+  letter-spacing:.04em;padding:6px 11px;border-radius:100px;
+  opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s;
+}
+.cert:hover .cert__thumb::after,.cert:focus-visible .cert__thumb::after{opacity:1;transform:translateY(0)}
+.cert__name{display:block;font-weight:700;font-size:15.5px;line-height:1.4;margin-top:16px}
+.cert__org{display:block;margin-top:3px;font-size:13.5px;font-weight:600;color:var(--ink-soft)}
+@media (max-width:760px){.certs__grid{grid-template-columns:1fr}}
+
+/* ---------- lightbox ---------- */
+.lightbox{
+  position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;
+  padding:max(24px,4vw);background:rgba(17,17,16,.92);backdrop-filter:blur(4px);
+  opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;
+}
+.lightbox.is-open{opacity:1;visibility:visible}
+.lightbox__img{
+  max-width:100%;max-height:100%;border-radius:14px;
+  box-shadow:0 40px 90px -30px rgba(0,0,0,.7);
+  transform:scale(.96);transition:transform .3s;
+}
+.lightbox.is-open .lightbox__img{transform:scale(1)}
+.lightbox__cap{
+  position:absolute;left:0;right:0;bottom:max(16px,2.5vw);text-align:center;
+  color:rgba(255,255,255,.82);font-size:14px;font-weight:600;padding:0 60px;
+}
+.lightbox__btn{
+  position:absolute;display:flex;align-items:center;justify-content:center;cursor:pointer;
+  color:#fff;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.22);
+  border-radius:50%;transition:background .25s,transform .25s;
+}
+.lightbox__btn:hover{background:var(--accent);border-color:var(--accent)}
+.lightbox__close{top:max(18px,2.5vw);right:max(18px,2.5vw);width:48px;height:48px;font-size:26px;line-height:1}
+.lightbox__nav{top:50%;transform:translateY(-50%);width:54px;height:54px;font-size:30px;line-height:1}
+.lightbox__nav:hover{transform:translateY(-50%) scale(1.08)}
+.lightbox__prev{left:max(18px,2.5vw)}
+.lightbox__next{right:max(18px,2.5vw)}
+.lightbox[data-single="true"] .lightbox__nav{display:none}
+@media (max-width:600px){
+  .lightbox__nav{width:44px;height:44px;font-size:24px}
+  .lightbox__cap{font-size:12px;padding:0 50px}
+}
+
 /* ---------- CTA / contacts ---------- */
 .cta{
   background:var(--ink);color:var(--bg);border-radius:48px 48px 0 0;
@@ -915,6 +982,33 @@ img{max-width:100%}
       <div><p class="edu-card__name">Техники работы с возражениями и наставничество в проектной деятельности</p></div>
     </div>
   </div>
+
+  <div class="certs reveal">
+    <h3 class="certs__title">Сертификаты</h3>
+    <div class="certs__grid">
+      <button class="cert reveal-scale" type="button"
+              data-src="dip/cert-prodamus-scoutxl.jpeg"
+              data-caption="СкаутXL · Техническая настройка онлайн-школы на Prodamus.XL · 2026">
+        <span class="cert__thumb"><img src="dip/cert-prodamus-scoutxl.jpeg" alt="Сертификат СкаутXL: техническая настройка онлайн-школы на платформе Prodamus.XL, № 0223021, 2026" loading="lazy"></span>
+        <span class="cert__name">Техническая настройка онлайн-школы на Prodamus.XL</span>
+        <span class="cert__org">СкаутXL · 2026</span>
+      </button>
+      <button class="cert reveal-scale" type="button"
+              data-src="dip/cert-zerocoder-claude.png"
+              data-caption="Университет Zerocoder · Вайб-кодинг на Claude Code, 36 ак. часов · 2026">
+        <span class="cert__thumb"><img src="dip/cert-zerocoder-claude.png" alt="Диплом Университета Zerocoder: курс «Вайб-кодинг на Claude Code», 36 академических часов, 2026" loading="lazy"></span>
+        <span class="cert__name">Вайб-кодинг на Claude Code · 36 ак. часов</span>
+        <span class="cert__org">Университет Zerocoder · 2026</span>
+      </button>
+      <button class="cert reveal-scale" type="button"
+              data-src="dip/cert-yandex-direct-baryga.jpg"
+              data-caption="Барыга Трафика · Яндекс.Директ: от настройки до результата · 2024">
+        <span class="cert__thumb"><img src="dip/cert-yandex-direct-baryga.jpg" alt="Сертификат «Барыга Трафика»: курс «Яндекс.Директ: от настройки до результата», 2024" loading="lazy"></span>
+        <span class="cert__name">Яндекс.Директ: от настройки до результата</span>
+        <span class="cert__org">Барыга Трафика · 2024</span>
+      </button>
+    </div>
+  </div>
 </section>
 
 <!-- ================= CTA ================= -->
@@ -942,6 +1036,15 @@ img{max-width:100%}
 </footer>
 
 <button class="totop" id="totop" aria-label="Наверх">↑</button>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр сертификата">
+  <button class="lightbox__btn lightbox__close" id="lbClose" type="button" aria-label="Закрыть">×</button>
+  <button class="lightbox__btn lightbox__nav lightbox__prev" id="lbPrev" type="button" aria-label="Предыдущий">‹</button>
+  <img class="lightbox__img" id="lbImg" src="" alt="">
+  <button class="lightbox__btn lightbox__nav lightbox__next" id="lbNext" type="button" aria-label="Следующий">›</button>
+  <span class="lightbox__cap" id="lbCap"></span>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -981,6 +1084,7 @@ if (SNAP) {
   preloader.remove();
   gsap.set('.hero__title .line > span', { y: 0 });
   gsap.set(['.hero .reveal', '.hero__photo'], { opacity: 1, y: 0 });
+  gsap.set('.reveal, .reveal-scale', { opacity: 1, y: 0, scale: 1 });
 }
 if (!SNAP) {
   gsap.to(preloader.querySelector('.preloader__name span'), { y: 0, duration: .8, ease: 'power3.out', delay: .1 });
@@ -1198,6 +1302,48 @@ if (!isMobile) {
     });
   });
 }
+
+/* ---------- certificate lightbox ---------- */
+(() => {
+  const certs = [...document.querySelectorAll('.cert')];
+  if (!certs.length) return;
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCap = document.getElementById('lbCap');
+  let current = 0;
+  lb.dataset.single = certs.length < 2;
+
+  function show(i) {
+    current = (i + certs.length) % certs.length;
+    const c = certs[current];
+    lbImg.src = c.dataset.src;
+    lbImg.alt = c.querySelector('img').alt;
+    lbCap.textContent = c.dataset.caption || '';
+  }
+  function open(i) {
+    show(i);
+    lb.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    if (lenis) lenis.stop();
+    document.getElementById('lbClose').focus();
+  }
+  function close() {
+    lb.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (lenis) lenis.start();
+  }
+  certs.forEach((c, i) => c.addEventListener('click', () => open(i)));
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbPrev').addEventListener('click', () => show(current - 1));
+  document.getElementById('lbNext').addEventListener('click', () => show(current + 1));
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  addEventListener('keydown', e => {
+    if (!lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(current - 1);
+    else if (e.key === 'ArrowRight') show(current + 1);
+  });
+})();
 
 addEventListener('load', () => ScrollTrigger.refresh());
 </script>
